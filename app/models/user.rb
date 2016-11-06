@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
          
-	devise :omniauthable, :omniauth_providers => [:facebook]
+	
+	has_many :likes
          
 	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
@@ -20,6 +21,10 @@ class User < ApplicationRecord
     user.image = auth.info.image 
   end
 end
+
+	def likes?(post)
+		post.likes.where(user_id: id).any?
+	end
 end
 
 
