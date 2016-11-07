@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/scambra/devise_invitable.git
+  revision: ac06ccb6e181fcbdb2cb6fdf0bf8779ab1b471bd
+  specs:
+    devise_invitable (1.7.0)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -206,6 +214,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.2)
+  devise_invitable!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

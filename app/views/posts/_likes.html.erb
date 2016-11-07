@@ -4,6 +4,6 @@
 	<%= link_to "Like", post_like_path(post), method: :post, remote: true%>
 	<% end %>
 	
-<% post.likes.each do |like| %>
+<% post.likes.first(3).each do |like| %>
 	<%= image_tag like.user.avatar, width: 20%>
 <% end %>

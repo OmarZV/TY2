@@ -15,6 +15,7 @@ gem 'devise', '~> 4.2'
 gem 'paperclip', '~> 5.1'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'devise_invitable', github: 'scambra/devise_invitable'
 
 
 group :development, :test do
