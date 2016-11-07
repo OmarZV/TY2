@@ -4,7 +4,7 @@ class Posts::LikesController < ApplicationController
 	
 	def create
 		@post.likes.where(user_id: current_user.id).first_or_create
-		(@post.users.uniq - [current_user]).each do |user|
+		(@post.likes.users.uniq - [current_user]).each do |user|
 			Notification.create(recipient: user, actor: current_user, action: "Liked", notifiable: @post.likes)
 		end
 				
