@@ -5,7 +5,8 @@
 <div class="round-image-50"><%= image_tag(user.avatar.url(:thumb)) %></div>
 
 <div id="user_<%= @user_id%>_rankings">
-	<%= render partial: "rankings", locals: {user: @user} %>
+	<%= render partial: "rankings", locals: {user: user} %>
 	</div>
+<div><%= link_to 'Follow', follow_user_path(user), method: :post %></div>
 	
 <% end %>

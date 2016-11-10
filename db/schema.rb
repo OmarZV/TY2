@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108215357) do
+ActiveRecord::Schema.define(version: 20161110010558) do
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "action"
+    t.integer  "eventable_id"
+    t.string   "eventable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"

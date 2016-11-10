@@ -6,6 +6,7 @@ class User < ApplicationRecord
          
 	
 	has_many :likes
+	has_many :events
 	has_many :notifications, foreign_key: :recipient_id
 	has_one :ranking
          

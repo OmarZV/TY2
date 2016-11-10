@@ -6,6 +6,7 @@
 	<h3><%= link_to post.title, post %></h3>
 	<div><%= simple_format post.body %></div>
 	<p id="post_<%= post.id %>_likes"><%= render partial: "likes", locals: {post: post} %>
+	<p><%= link_to 'Bookmark', bookmark_post_path(post), method: :post %></p>
 	<hr />
 	<% end %>
 	
