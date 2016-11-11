@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
+    
   end
 
   
@@ -25,6 +26,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
+    @post.post_users.new(user: current_user, role: "owner")
 
     respond_to do |format|
       if @post.save  

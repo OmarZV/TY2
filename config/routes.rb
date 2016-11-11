@@ -13,13 +13,13 @@ Rails.application.routes.draw do
   		post :follow
   	end
   end
-  resources :posts do
+  resources :posts do  	
   	resource :like, module: :posts
   	member do
   		post :bookmark
   	end
   end
   
-  root to: "posts#index"
+  root to: "events#index"
  
 end
