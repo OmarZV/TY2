@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :chatrooms do
+  	resource :chatroom_users
+  	resources :messages
+  end
+  resources :direct_messages
   resources :events
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, :controllers => "users_controller.rb"
